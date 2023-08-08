@@ -8,6 +8,7 @@
 var tiempoInactividad = 600;
 var activo_ = true;
 $(document).ready(function () {
+    console.log("OLA");
     getMac();
     verificarSesionActiva();
     cerrarSesionInactividad();
@@ -119,6 +120,8 @@ function verificarSesionActiva() {
         data: data,
         type: 'post',
         success: function (rta) {
+            console.log(rta);
+            console.log(macLocal.toUpperCase());
             var entrar = true;
             if (rta !== "FALSE") {
                 rta = JSON.parse(rta);
